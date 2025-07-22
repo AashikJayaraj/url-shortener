@@ -20,6 +20,10 @@ public class ShortUrl {
 
     private LocalDateTime expiryDate;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     public ShortUrl() {
     }
 
