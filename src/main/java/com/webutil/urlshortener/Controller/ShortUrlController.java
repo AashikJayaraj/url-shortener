@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.NoSuchAlgorithmException;
+
 @RestController
 public class ShortUrlController {
 
@@ -18,7 +20,7 @@ public class ShortUrlController {
 
     //URL to obtain long url and conver it into short url
     @GetMapping("/user/{userId}/shortUrl")
-    public ResponseEntity<String> getShortUrl(@PathVariable String userId, @RequestBody ShortUrlDto shortUrlDto){
+    public ResponseEntity<String> getShortUrl(@PathVariable String userId, @RequestBody ShortUrlDto shortUrlDto) throws NoSuchAlgorithmException {
         String shortUrl = shortUrlService.convertToShortUrl(Long.valueOf(userId),shortUrlDto);
         return new ResponseEntity<>(shortUrl, HttpStatus.OK);
     }
