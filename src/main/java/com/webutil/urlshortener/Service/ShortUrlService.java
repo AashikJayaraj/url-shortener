@@ -6,6 +6,7 @@ import com.webutil.urlshortener.Entity.User;
 import com.webutil.urlshortener.Repository.ShortUrlRepo;
 import com.webutil.urlshortener.Repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
@@ -47,5 +48,9 @@ public class ShortUrlService {
             sb.append(BASE62.charAt(value % 62));
         }
         return sb.substring(0, 8);
+    }
+
+    public ShortUrl getLongUrl(String shortUrl) {
+        return shortUrlRepo.findByShortUrl(shortUrl).orElseThrow();
     }
 }
