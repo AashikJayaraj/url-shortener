@@ -20,4 +20,12 @@ A minimal yet extensible backend service to shorten long URLs using a hashed alg
 - Docker & Docker Compose
 - Postman (for API testing)
 
+  
+API to add user
+<img width="1057" height="450" alt="AddUser" src="https://github.com/user-attachments/assets/74b7e6bd-78dd-4f2d-9ab7-993b91f8149f" />
+
+API to get short URL
+<img width="1060" height="432" alt="GetShortUrl" src="https://github.com/user-attachments/assets/66f4314b-4e9f-4e1c-87dc-8556f1145db0" />
+
+
 
